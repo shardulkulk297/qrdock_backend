@@ -29,7 +29,7 @@ public class Visits {
     // (Optional) via which QR (if tracked)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "qr_code_id")
-    private QrCode qrCode;
+    private Qrcode qrCode;
 
     @Column(name = "user_agent", length = 255)
     private String userAgent;
@@ -42,4 +42,62 @@ public class Visits {
 
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now(); // simple timestamp (or use auditing)
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+
+    public Qrcode getQrCode() {
+        return qrCode;
+    }
+
+    public void setQrCode(Qrcode qrCode) {
+        this.qrCode = qrCode;
+    }
+
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+        this.userAgent = userAgent;
+    }
+
+    public String getReferrer() {
+        return referrer;
+    }
+
+    public void setReferrer(String referrer) {
+        this.referrer = referrer;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    
 }
