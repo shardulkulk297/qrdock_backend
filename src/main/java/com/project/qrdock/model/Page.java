@@ -15,7 +15,7 @@ import java.time.Instant;
     }
 )
 
-public class Visits {
+public class Page {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

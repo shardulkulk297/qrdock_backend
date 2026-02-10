@@ -8,39 +8,28 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "admin")
+public class Admin {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String customerName;
-    private String contact;
-    private String email;
+    private String name;
     @OneToOne
     private User user;
+
+    
     public int getId() {
         return id;
     }
     public void setId(int id) {
         this.id = id;
     }
-    public String getCustomerName() {
-        return customerName;
+    public String getName() {
+        return name;
     }
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-    public String getContact() {
-        return contact;
-    }
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
     }
     public User getUser() {
         return user;
@@ -48,9 +37,9 @@ public class Customer {
     public void setUser(User user) {
         this.user = user;
     }
+    
+    
 
-    
-    
 
     
 }
